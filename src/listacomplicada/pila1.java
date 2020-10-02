@@ -7,9 +7,15 @@ package listacomplicada;
 
 import java.util.Scanner;
 import java.util.Random;
-public class ListaComplicada {
+public class pila1 {
 	public static void main(String[] args) {
-		Lista listita=new Lista();
+		
+            Scanner sc = new Scanner(System.in);
+       int tope=0, tam,opt;
+       
+       System.out.println("ingresa el tamaño que quieres en la pila A Y B");
+       int pila [] = new int [tam = sc.nextInt()];
+           Lista listita=new Lista();
 		Random num = new Random();
 		int opcion=0;
 		int crack;
@@ -18,54 +24,49 @@ public class ListaComplicada {
 		int contador;
 		Scanner Teclado = new Scanner(System.in);
 		Scanner entrada = new Scanner(System.in);
-		System.out.println("Bienvenido a este programa de lista enlazada");
+		System.out.println("Te doy la bienvenida ");
 		System.out.println("Que desea realizar:");
 		do {
 			System.out.println("1: Agregar un elemento");
-			System.out.println("2: Mostrar todos los elementos ingresados");
-			System.out.println("3: Submenu de Eliminar");
-			System.out.println("4: Llenar automaticamente");
-			System.out.println("5: Ordenar los elementos de menor a mayor");
-			System.out.println("6: Salir");
+			System.out.println("2: Mostrar todos los elementos obtenidos ");
+			System.out.println("3: Submenu de Eliminar elementos");
+			System.out.println("4: Llenado de elementos ");
+			System.out.println("5: Ordenamiento de menor a mayor");
+                        System.out.println("6: mostrar los elementos ya obtenidos");
+			System.out.println("7: concluir");
 			opcion = Teclado.nextInt();
 			switch (opcion) {
-			case 1: System.out.println("Favor de ingresar el elemento a insertar");
+			case 1: System.out.println("ingresar el elemento a insertar");
 			        Scanner teeclado = new Scanner(System.in);
 			        crack = teeclado.nextInt();
 			        listita.AgregarDatos(crack);
 			        break;
 			        
-			case 2: System.out.println("####Aqui se muestran todos los elementos que ingresaste####");
+			case 2: System.out.println("Aqui se encuentran todos los elementos obtenidos ");
 			        listita.MostrarLista();
-			        System.out.println("####Aqui se muestran todos los elementos que ingresaste####");
+			        System.out.println("Aqui se encuentran todos los elementos obtenidos ");
 			        break;
 			        
 			case 3: 
-				System.out.println("Bienbenido al submenu de eliminar, que desea realizar;");
+				System.out.println("Bienvenido al submenu de eliminar, que desea realizar;");
 				int opc;
 				do {
 				System.out.println("1: Eliminar El primer elemento");
 				System.out.println("2: Eliminar ultimo elemento");
-				System.out.println("3: Eliminar elemento en especifico");
-				System.out.println("4: Eliminar Todos Los elementos");
-				System.out.println("5: volver al menu principal");
+				System.out.println("3: Eliminar Todos Los elementos");
+				System.out.println("4: volver al menu principal");
 				 opc = Teclado.nextInt();
 				switch(opc) {
-					case 1: System.out.println("#####Se elimino el primer elemento#####");
+					case 1: System.out.println("Se elimino el primer elemento");
 					    listita.BorrarNodoinicio();
 						break;
 						
-					case 2:System.out.println("#####Se elimino el ultimo elemento#####");
+					case 2:System.out.println("Se elimino el ultimo elemento");
 						listita.BorrarDato();
 						break;
 						
-					case 3: System.out.println("#####Favor de ingresar el elemento que desea eliminar#####");
-			        Scanner teclado = new Scanner(System.in);
-			        crack = teclado.nextInt();
-			        listita.EliminarEspesific(crack);
-						break;
 						
-					case 4: System.out.println("#####Se eliminaron todos los elementos#####");
+					case 3: System.out.println("Se eliminaron todos los elementos");
 					listita.EliminarTodo();
 						break;
 				    }
@@ -78,7 +79,7 @@ public class ListaComplicada {
 			for(int j=1; j<=contador ; j++) {
 				Boolean salir= false;
 				Nodo auxx = listita.inicio;
-				i=(num.nextInt(200-150+1)+150);		
+				i=(num.nextInt(300-250+1)+250);		
 				while(auxx!=null) {
 					if(auxx.dato==i) {
 						salir=true;
@@ -94,16 +95,19 @@ public class ListaComplicada {
 			}
 			        break;
 				
-			 case 5: System.out.println("###Los Elementos se han ordenado de manor a mayor###");
+			 case 5: System.out.println("Los Elementos se han ordenado de manor a mayor");
 			        listita.Ordenar();
-			        System.out.println("###Los Elementos se han ordenado de manor a mayor###");
+			        System.out.println("Los Elementos se han ordenado de manor a mayor");
 			        break;
-			        
-			 case 6: System.out.println("Saliste de la aplicacion");
+			 case 6: System.out.println("Aqui se encuentran los datos ya empleados ");
+			        listita.MostrarLista();
+			        System.out.println("Aqui se encuentran los datos ya empleados");
+			        break;
+			 case 7: System.out.println("Saliste de la aplicacion");
 			        break;
 			        default: System.out.println("\topcion no valida, intenta de nuevo");
 			}
 			 
 		} while (opcion !=6);
-	}
+    }
 }
